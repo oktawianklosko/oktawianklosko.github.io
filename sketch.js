@@ -3,7 +3,7 @@ function setup() {
   var canvas = createCanvas(500, 500);
   canvas.parent("myContainer");
 
-  var text = createDiv('This is a HTML string');
+  //var text = createDiv('GAD405-Creative Coding');
 
   text.position(50,50);
 
