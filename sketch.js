@@ -15,16 +15,7 @@ function setup() {
 }
 
 function draw() {
-  background(30);
-
-  for(let i=0; i<300; i++){
-push();
-translate(10,10);
-fill(random(255), random(255), random(255));
-noStroke();
-ellipse(random(width), random(height), random(50), random(50));
-pop();
-
+  background(160);
   }
 
 }
