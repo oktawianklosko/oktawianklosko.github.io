@@ -18,37 +18,45 @@ var value = 0;
 function draw() {
   //background(160);
 
-//Changes color of shapes depending on the position of the mouse on the canvas
+  //Changes color of shapes depending on the position of the mouse on the canvas
   if (mouseX,mouseY) {
-        r = (value);
-        g = (value);
-        b = (value);
-//These lines control the coordinates of the canvas and as well as the color
-if (mouseX < 594 & mouseY < 841){
-fill(r,g,b, mouseX,mouseY);
-}
-if (mouseX < 594 & mouseY < 841){
-fill(b, mouseX,mouseY);
-}
-if (mouseX < 594 & mouseY < 841){
-fill(r, mouseX,mouseY);
-}
-if (mouseX < 594 & mouseY < 841){
-fill(g, mouseX,mouseY);
-}
-}
-//Creates a Forloop which makes shapes when the mouse is pressed
+    r = (value);
+    g = (value);
+    b = (value);
+    //These lines control the coordinates of the canvas and as well as the color
+    if (mouseX < 594 & mouseY < 841){
+      fill(r,g,b, mouseX,mouseY);
+    }
+    if (mouseX < 594 & mouseY < 841){
+      fill(b, mouseX,mouseY);
+    }
+    if (mouseX < 594 & mouseY < 841){
+      fill(r, mouseX,mouseY);
+    }
+    if (mouseX < 594 & mouseY < 841){
+      fill(g, mouseX,mouseY);
+    }
+  }
+
+  let distanceFromCenter = dist(width/2, height/2, mouseX, mouseY);
+  let newSize = map(distanceFromCenter, 0, 515, 400, 10);
+  console.log(distanceFromCenter);
+
+  //Creates a Forloop which makes shapes when the mouse is pressed
   for(let i=0; i<90; i++){
     push();
     if (mouseIsPressed){
       translate(0, 0);
       stroke(0);
       scale(1);
-      rect(random(width), random(height), random(50), random(50));
+      let xPos = random(mouseX-newSize, mouseX+newSize);
+      let yPos = random(mouseY-newSize, mouseY+newSize);
+      rect(xPos, yPos, random(50), random(50));
+      line(xPos, yPos, width/2, height/2);
       //fill(random(255), random(0), random(20), (200));
       pop();
+    }
   }
-}
 }
 
 function mouseReleased(){
