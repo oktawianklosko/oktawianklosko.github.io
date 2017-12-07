@@ -14,15 +14,15 @@ function setup() {
   y = random(height);
 }
 
-var value = r, g, b;
+var value = 0;
 function draw() {
   //background(160);
 
 //Changes color of shapes depending on the position of the mouse on the canvas
   if (mouseX,mouseY) {
-        r = (255);
-        g = (255);
-        b = (255);
+        r = (value);
+        g = (value);
+        b = (value);
 //These lines control the coordinates of the canvas and as well as the color
 if (mouseX < 594 & mouseY < 841){
 fill(r,g,b, mouseX,mouseY);
@@ -30,7 +30,6 @@ fill(r,g,b, mouseX,mouseY);
 if (mouseX < 594 & mouseY < 841){
 fill(b, mouseX,mouseY);
 }
-
 if (mouseX < 594 & mouseY < 841){
 fill(r, mouseX,mouseY);
 }
@@ -53,8 +52,8 @@ fill(g, mouseX,mouseY);
 }
 
 function mouseReleased(){
-  if (value == 255) {
-    value = 0;
+  if (value == 0) {
+    value = 255;
   } else {
     value = 0;
   }
