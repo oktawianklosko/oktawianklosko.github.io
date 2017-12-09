@@ -40,7 +40,6 @@ function draw() {
 
   let distanceFromCenter = dist(width/2, height/2, mouseX, mouseY);
   let newSize = map(distanceFromCenter, 0, 515, 400, 10);
-  console.log(distanceFromCenter);
 
   //Creates a Forloop which makes shapes when the mouse is pressed
   for(let i=0; i<90; i++){
@@ -52,7 +51,7 @@ function draw() {
       let xPos = random(mouseX-newSize, mouseX+newSize);
       let yPos = random(mouseY-newSize, mouseY+newSize);
       rect(xPos, yPos, random(50), random(50));
-      line(xPos, yPos, width/2, height/2);
+      line(xPos, yPos, width/2, height/2, (255));
       //fill(random(255), random(0), random(20), (200));
       pop();
     }
