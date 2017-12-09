@@ -17,7 +17,6 @@ function setup() {
 var value = 0;
 function draw() {
   //background(160);
-  if (keyIsPressed === true) {
   //Changes color of shapes depending on the position of the mouse on the canvas
   if (mouseX,mouseY) {
     r = (value);
@@ -36,7 +35,6 @@ function draw() {
     if (mouseX < 594 & mouseY < 841){
       fill(g, mouseX,mouseY);
     }
-  }
 
 }
   let distanceFromCenter = dist(width/2, height/2, mouseX, mouseY);
@@ -47,7 +45,7 @@ function draw() {
     push();
     if (mouseIsPressed){
       translate(0, 0);
-      stroke(value);
+      stroke(0);
       scale(1);
       let xPos = random(mouseX-newSize, mouseX+newSize);
       let yPos = random(mouseY-newSize, mouseY+newSize);
