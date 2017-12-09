@@ -43,11 +43,11 @@ function draw() {
   let newSize = map(distanceFromCenter, 0, 515, 400, 10);
 
   //Creates a Forloop which makes shapes when the mouse is pressed
-  for(let i=0; i<90; i++){
+  for(let i=0; i<50; i++){
     push();
     if (mouseIsPressed){
       translate(0, 0);
-      stroke(0);
+      stroke(value);
       scale(1);
       let xPos = random(mouseX-newSize, mouseX+newSize);
       let yPos = random(mouseY-newSize, mouseY+newSize);
