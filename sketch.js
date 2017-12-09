@@ -17,7 +17,7 @@ function setup() {
 var value = 0;
 function draw() {
   //background(160);
-
+  if (keyIsPressed === true) {
   //Changes color of shapes depending on the position of the mouse on the canvas
   if (mouseX,mouseY) {
     r = (value);
@@ -38,6 +38,7 @@ function draw() {
     }
   }
 
+}
   let distanceFromCenter = dist(width/2, height/2, mouseX, mouseY);
   let newSize = map(distanceFromCenter, 0, 515, 400, 10);
 
