@@ -15,8 +15,6 @@ function setup() {
 }
 
 var value = 0;
-var zone = 2;
-var zone1 = 4;
 function draw() {
   //background(160);
   //Changes color of shapes depending on the position of the mouse on the canvas
@@ -43,19 +41,21 @@ function draw() {
   let newSize = map(distanceFromCenter, 0, 515, 400, 10);
 
   //Creates a Forloop which makes shapes when the mouse is pressed
-  for(let i=0; i<10; i++){
+  for(let i=0; i<200; i++){
     push();
     if (mouseIsPressed){
       translate(0, 0);
       stroke(0);
       scale(1);
-      let xPos = random(mouseX-newSize, mouseX+newSize);
-      let yPos = random(mouseY-newSize, mouseY+newSize);
       rect(xPos, yPos, random(50), random(50));
-      line(xPos, yPos, width/zone, height/zone, (255));
+      //line(xPos, yPos, width/2, height/2, (255));
       //fill(random(255), random(0), random(20), (200));
       pop();
     }
+  }
+  if (keyIsPressed === true) {
+    let xPos = random(mouseX-newSize, mouseX+newSize);
+    let yPos = random(mouseY-newSize, mouseY+newSize);
   }
 }
 
@@ -64,10 +64,5 @@ function mouseReleased(){
     value = 255;
   } else {
     value = 0;
-  }
-  if (zone == 2) {
-    zone = 4;
-  } else {
-    zone = 2;
   }
 }
