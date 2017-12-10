@@ -7,6 +7,7 @@ function setup() {
   var text = createDiv('GAD405-Creative Coding');
 
   text.position(50,50);
+  background(160);
 
   frameRate(30);
 
@@ -41,21 +42,19 @@ function draw() {
   let newSize = map(distanceFromCenter, 0, 515, 400, 10);
 
   //Creates a Forloop which makes shapes when the mouse is pressed
-  for(let i=0; i<200; i++){
+  for(let i=0; i<100; i++){
     push();
     if (mouseIsPressed){
-      translate(0, 0);
+      //translate(0, 0);
       stroke(0);
       scale(1);
-      rect(xPos, yPos, random(50), random(50));
+      let xPos = random(mouseX-newSize, mouseX+newSize);
+      let yPos = random(mouseY-newSize, mouseY+newSize);
+      rect(mouseX, mouseY, random(100), random(100));
       //line(xPos, yPos, width/2, height/2, (255));
       //fill(random(255), random(0), random(20), (200));
       pop();
     }
-  }
-  if (keyIsPressed === true) {
-    let xPos = random(mouseX-newSize, mouseX+newSize);
-    let yPos = random(mouseY-newSize, mouseY+newSize);
   }
 }
 
