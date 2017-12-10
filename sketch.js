@@ -44,9 +44,6 @@ function draw() {
 
   }
 
-  let distanceFromCenter = dist(width/2, height/2, mouseX, mouseY);
-  let newSize = map(distanceFromCenter, 0, 515, 400, 10);
-
   //Creates a ForLoop which creates shapes when the mouse is pressed and draws them onto the background
   //This line also dictates the amount of shapes that are created
   for(let i=0; i<100; i++){
@@ -59,8 +56,6 @@ function draw() {
       stroke(0);
     //This line determines the size of the shapes
       scale(1);
-      let xPos = random(mouseX-newSize, mouseX+newSize);
-      let yPos = random(mouseY-newSize, mouseY+newSize);
       rect(mouseX, mouseY, random(100), random(100));
       //line(xPos, yPos, width/2, height/2, (255));
       pop();
