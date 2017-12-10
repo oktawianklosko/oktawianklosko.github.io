@@ -64,6 +64,7 @@ function draw() {
       rect(mouseX, mouseY, random(100), random(100));
       //line(xPos, yPos, width/2, height/2, (255));
       pop();
+      
     }
   }
 }
