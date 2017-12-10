@@ -5,21 +5,16 @@ let value = 0;
 //This function is used once when the sketch starts up, it establishes properties such as
 //the canvas size to determine the environment
 function setup() {
-  //Creates the canvas and displays its size which can be edited
+//Creates the canvas and displays its size which can be edited
   var canvas = createCanvas(594, 841);
+//Links to container in HTML
   canvas.parent("myContainer");
-
+//Establishes the text on the webpage, sketch doesn't appear to work without it
   var text = createDiv('');
-
-  text.position(50,50);
   //Adds a colour to the background of the canvas
   background(160);
-
-  x = random(width);
-  y = random(height);
 }
-
-//Continually repeats lines of code after setup
+//Continually repeats lines of code after setup runs
 function draw() {
   //Changes color of shapes depending on the position of the mouse on the canvas
   if (mouseX,mouseY) {
@@ -47,6 +42,7 @@ function draw() {
   //Creates a ForLoop which creates shapes when the mouse is pressed and draws them onto the background
   //This line also dictates the amount of shapes that are created
   for(let i=0; i<100; i++){
+    //Pushes current drawing setting like stroke, scale and rect
     push();
     //This line establishes a mouse button press as the way in which following code will be executed,
     //Without this line the code would simply run constantly and shapes would appear if the mouse was
@@ -56,16 +52,23 @@ function draw() {
       stroke(0);
     //This line determines the size of the shapes
       scale(1);
+    //Creates random size rectangle which is moved by the position of the mouse
       rect(mouseX, mouseY, random(100), random(100));
-      //line(xPos, yPos, width/2, height/2, (255));
+    //Restores drawing settings, loop starts back at push
       pop();
     }
   }
 }
-
+//This function is used when the user releasea the mouse button which then activeates
+//the code contained in the function
 function mouseReleased(){
+  //If the variable "value" = 0, which it does by default, then the value changes to "255"
+  //only when the mouse is released, therefore the colours used to draw shapes alternate
+  //between two seperate sets
   if (value == 0) {
     value = 255;
+  //This line sets the value back to "0" therefore each time the mouse button is
+  //released the colour alternates 
   } else {
     value = 0;
   }
