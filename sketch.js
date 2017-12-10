@@ -38,6 +38,7 @@ function draw() {
     }
 
 }
+
   let distanceFromCenter = dist(width/2, height/2, mouseX, mouseY);
   let newSize = map(distanceFromCenter, 0, 515, 400, 10);
 
