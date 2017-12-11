@@ -5,12 +5,12 @@ let value = 0;
 //This function is used once when the sketch starts up, it establishes properties such as
 //the canvas size to determine the environment
 function setup() {
-//Creates the canvas and displays its size which can be edited
+  //Creates the canvas and displays its size which can be edited
   var canvas = createCanvas(594, 841);
-//Nests the canvas in the div created in HTML, this allows the sketch to be placed
-//in between the header and footer on the webpage
+  //Nests the canvas in the div created in HTML, this allows the sketch to be placed
+  //in between the header and footer on the webpage
   canvas.parent("myContainer");
-//Establishes the text on the webpage, sketch doesn't appear to work without it
+  //Establishes the text on the webpage, sketch doesn't appear to work without it
   var text = createDiv('');
   //Adds a colour to the background of the canvas
   background(160);
@@ -32,7 +32,7 @@ function draw() {
     //The numbers used in these lines represent the size of the canvas and therefore
     //dictate the how colours change depending on the position of the mouse
     if (mouseX < 594 & mouseY < 841){
-    //These lines dictate the fill of the colour as shown by the value "b"
+      //These lines dictate the fill of the colour as shown by the value "b"
       fill(b, mouseX,mouseY);
     }
     if (mouseX < 594 & mouseY < 841){
@@ -54,14 +54,14 @@ function draw() {
     //Without this line the code would simply run constantly and shapes would appear if the mouse was
     //on the canvas
     if (mouseIsPressed){
-    //This line adds an outline to the shapes
+      //This line adds an outline to the shapes
       stroke(0);
-    //This line determines the size of the shapes
+      //This line determines the size of the shapes
       scale(1);
-    //Creates random size rectangle which is moved by the position of the mouse
+      //Creates random size rectangle which is moved by the position of the mouse
       rect(mouseX, mouseY, random(100), random(100));
-    //Restores drawing settings, loop starts back at push and can continue to run
-    //the same lines of code when the mouse button is pressed
+      //Restores drawing settings, loop starts back at push and can continue to run
+      //the same lines of code when the mouse button is pressed
       pop();
     }
   }
@@ -74,8 +74,8 @@ function mouseReleased(){
   //between two seperate sets
   if (value == 0) {
     value = 255;
-  //This line sets the value back to "0" therefore each time the mouse button is
-  //released the colour alternates
+    //This line sets the value back to "0" therefore each time the mouse button is
+    //released the colour alternates
   } else {
     value = 0;
   }
